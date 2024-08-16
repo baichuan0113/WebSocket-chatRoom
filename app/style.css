@@ -1,0 +1,138 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#28282B;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #c0c0c0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(90deg, #8F00FF, #D896FF);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #6b6767;
+    background-color: #c0c0c0;
+    bottom: 0;
+}
+
+
+
+form input {
+    flex: 1;
+    padding: 10px;
+
+    border: 1px solid #8F00FF;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+form button {
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #D896FF, #8F00FF);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+#notifications {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #b880e3;
+    box-shadow:  9px 9px 18px #c7cee2,
+        -9px -9px 18px #c0c5d1;
+    color: rgb(240, 243, 250);
+    margin: 20px;
+}
+
+#notifications.show {
+    visibility: visible;
+    opacity: 1;
+    animation: floatIn 0.5s ease-out, disappear 4.5s 1s ease forwards;
+}
+
+@keyframes floatIn {
+    0% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #808080;
+}
+
+ul li {
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 999px;
+    background-color: #D3D3D3;
+}
+
+ul li:nth-child(odd) {
+    background-color: #D3D3D3;
+}
+
+
